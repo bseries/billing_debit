@@ -12,7 +12,7 @@
         "php": ">=5.5.0",
         "jschaedl/iban": "1.1.*",
         "uor/li3_flash_message": "dev-master",
-        "atelierdisko/cms_core": "1.1.*",
+        "atelierdisko/cms_core": "1.2.*",
         "unionofrad/lithium": "dev-dev",
         "composer/installers": "~1.0"
     },
