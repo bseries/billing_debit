@@ -1,6 +1,6 @@
 {
-    "name": "atelierdisko/ecommerce_debit",
-    "description": "Debit payments functionality for boutique.",
+    "name": "atelierdisko/billing_debit",
+    "description": "Billing Debit functionality.",
     "homepage": "http://atelierdisko.de",
     "type": "lithium-library",
     "license": "proprietary",
@@ -13,6 +13,7 @@
         "jschaedl/iban": "1.1.*",
         "uor/li3_flash_message": "dev-master",
         "atelierdisko/cms_core": "1.2.*",
+        "atelierdisko/billing_core": "1.2.*",
         "unionofrad/lithium": "dev-dev",
         "composer/installers": "~1.0"
     },
@@ -24,6 +25,10 @@
       {
         "type": "vcs",
         "url": "git@bitbucket.org:atelierdisko/cms_core.git"
+      },
+      {
+        "type": "vcs",
+        "url": "git@bitbucket.org:atelierdisko/billing_core.git"
       }
    ]
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Boutique Debit
+ * Billing Debit
  *
  * Copyright (c) 2014 Atelier Disko - All rights reserved.
  *

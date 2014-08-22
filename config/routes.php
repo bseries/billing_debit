@@ -1,6 +1,6 @@
 <?php
 /**
- * Boutique Debit
+ * Billing Debit
  *
  * Copyright (c) 2014 Atelier Disko - All rights reserved.
  *
@@ -15,16 +15,16 @@ use lithium\net\http\Router;
 $persist = ['persist' => ['admin', 'controller']];
 
 Router::connect('/admin/ecommerce/debit-cards/{:id:[0-9]+}', [
-	'controller' => 'DebitCards', 'library' => 'ecommerce_debit', 'action' => 'view', 'admin' => true
+	'controller' => 'DebitCards', 'library' => 'billing_debit', 'action' => 'view', 'admin' => true
 ], $persist);
 Router::connect('/admin/ecommerce/debit-cards/{:action}', [
-	'controller' => 'DebitCards', 'library' => 'ecommerce_debit', 'admin' => true
+	'controller' => 'DebitCards', 'library' => 'billing_debit', 'admin' => true
 ], $persist);
 Router::connect('/admin/ecommerce/debit-cards/{:action}/{:id:[0-9]+}', [
-	'controller' => 'DebitCards', 'library' => 'ecommerce_debit', 'admin' => true
+	'controller' => 'DebitCards', 'library' => 'billing_debit', 'admin' => true
 ], $persist);
 Router::connect('/admin/ecommerce/debit-cards/{:id:[0-9]+}/status/{:status}', [
-	'controller' => 'DebitCards', 'action' => 'update_status', 'library' => 'ecommerce_debit', 'admin' => true
+	'controller' => 'DebitCards', 'action' => 'update_status', 'library' => 'billing_debit', 'admin' => true
 ], $persist);
 
 ?>

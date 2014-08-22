@@ -38,7 +38,7 @@ $this->set([
 					<?php if ($order): ?>
 						<?= $this->html->link($order->number, [
 							'controller' => 'Orders', 'action' => 'edit', 'id' => $order->id,
-							'library' => 'ecommerce_debit'
+							'library' => 'billing_debit'
 						]) ?>
 					<?php else: ?>
 						-
@@ -66,7 +66,7 @@ $this->set([
 						</time>
 					<td class="actions">
 						<?php if (!$order && $item->status !== 'cancelled'): ?>
-							<?= $this->html->link($t('cancel'), ['id' => $item->id, 'action' => 'cancel', 'library' => 'ecommerce_debit'], ['class' => 'button']) ?>
+							<?= $this->html->link($t('cancel'), ['id' => $item->id, 'action' => 'cancel', 'library' => 'billing_debit'], ['class' => 'button']) ?>
 						<?php endif ?>
 				<?php endforeach ?>
 			</tbody>

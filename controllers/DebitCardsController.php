@@ -1,6 +1,6 @@
 <?php
 /**
- * Boutique Debit
+ * Billing Debit
  *
  * Copyright (c) 2014 Atelier Disko - All rights reserved.
  *
@@ -10,11 +10,11 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
 
-namespace ecommerce_debit\controllers;
+namespace billing_debit\controllers;
 
 use lithium\g11n\Message;
 use li3_flash_message\extensions\storage\FlashMessage;
-use ecommerce_debit\models\DebitCards;
+use billing_debit\models\DebitCards;
 
 class DebitCardsController extends \cms_core\controllers\BaseController {
 

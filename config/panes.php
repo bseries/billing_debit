@@ -1,6 +1,6 @@
 <?php
 /**
- * Boutique Debit
+ * Billing Debit
  *
  * Copyright (c) 2014 Atelier Disko - All rights reserved.
  *
@@ -15,7 +15,7 @@ use lithium\g11n\Message;
 
 extract(Message::aliases());
 
-$base = ['controller' => 'ecommerce', 'library' => 'ecommerce_debit', 'admin' => true];
+$base = ['controller' => 'ecommerce', 'library' => 'billing_debit', 'admin' => true];
 Panes::register('ecommerce.debitCards', [
 	'title' => $t('Debit Cards'),
 	'url' => ['controller' => 'DebitCards', 'action' => 'index'] + $base
