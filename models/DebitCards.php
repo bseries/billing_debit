@@ -12,6 +12,11 @@
 
 namespace billing_debit\models;
 
-class DebitCards extends \cms_core\models\Base {}
+class DebitCards extends \cms_core\models\Base {
+
+	protected $_meta = [
+		'source' => 'billing_debit_cards'
+	];
+}
 
 ?>
