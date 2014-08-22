@@ -15,10 +15,9 @@ use lithium\g11n\Message;
 
 extract(Message::aliases());
 
-$base = ['controller' => 'ecommerce', 'library' => 'billing_debit', 'admin' => true];
-Panes::register('ecommerce.debitCards', [
+Panes::register('billing.debitCards', [
 	'title' => $t('Debit Cards'),
-	'url' => ['controller' => 'DebitCards', 'action' => 'index'] + $base
+	'url' => ['controller' => 'DebitCards', 'action' => 'index', 'library' => 'billing_debit', 'admin' => true]
 ]);
 
 ?>
