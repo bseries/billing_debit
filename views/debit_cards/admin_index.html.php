@@ -18,11 +18,11 @@ $this->set([
 		<table>
 			<thead>
 				<tr>
+					<td data-sort="user" class="user list-sort"><?= $t('User') ?>
+					<td data-sort="holder" class="holder list-sort"><?= $t('Holder') ?>
 					<td data-sort="iban" class="iban list-sort"><?= $t('IBAN') ?>
 					<td data-sort="bic" class="bic list-sort"><?= $t('BIC') ?>
 					<td data-sort="bank" class="bank list-sort"><?= $t('Bank') ?>
-					<td data-sort="holder" class="holder list-sort"><?= $t('Holder') ?>
-					<td data-sort="user" class="user list-sort"><?= $t('User') ?>
 					<td data-sort="created" class="date created list-sort desc"><?= $t('Created') ?>
 					<td class="actions">
 						<?= $this->form->field('search', [
@@ -36,10 +36,6 @@ $this->set([
 				<?php foreach ($data as $item): ?>
 					<?php $user = $item->user() ?>
 				<tr data-id="<?= $item->id ?>">
-					<td class="iban"><?= $item->iban ?>
-					<td class="bic"><?= $item->bic ?>
-					<td class="bank"><?= $item->bank()->name ?>
-					<td class="holder"><?= $item->holder ?>
 					<td class="user">
 					<?php if ($user): ?>
 						<?= $this->html->link($user->number, [
@@ -50,6 +46,10 @@ $this->set([
 					<?php else: ?>
 						–
 					<?php endif ?>
+					<td class="holder emphasize"><?= $item->holder ?>
+					<td class="iban emphasize"><?= $item->iban ?>
+					<td class="bic"><?= $item->bic ?>
+					<td class="bank"><?= $item->bank()->name ?>
 					<td class="date created">
 						<time datetime="<?= $this->date->format($item->created, 'w3c') ?>">
 							<?= $this->date->format($item->created, 'date') ?>
