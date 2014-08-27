@@ -50,17 +50,19 @@ $this->set([
 				<?= $this->form->field('iban', [
 					'type' => 'text',
 					'label' => $t('IBAN'),
-					'class' => 'use-for-title'
+					'class' => 'use-for-title',
+					'style' => 'text-transform: uppercase;'
 				]) ?>
 				<?= $this->form->field('bic', [
 					'type' => 'text',
-					'label' => $t('BIC')
+					'label' => $t('BIC'),
+					'style' => 'text-transform: uppercase;'
 				]) ?>
 				<?= $this->form->field('bank.name', [
 					'type' => 'text',
 					'label' => $t('Bank'),
 					'disabled' => true,
-					'value' => $item->exists() ? $item->bank()->name : null
+					'value' => $item->exists() && ($bank = $item->bank()) ? $bank->name : null
 				]) ?>
 			</div>
 			<div class="grid-column-right">
