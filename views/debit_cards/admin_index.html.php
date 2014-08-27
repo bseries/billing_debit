@@ -3,21 +3,26 @@
 $this->set([
 	'page' => [
 		'type' => 'multiple',
-		'object' => $t('carts')
+		'object' => $t('debit cards')
 	]
 ]);
 
 ?>
 <article class="view-<?= $this->_config['controller'] . '-' . $this->_config['template'] ?> use-list">
-	<?php if ($data->count()): ?>
+
+	<div class="top-actions">
+		<?= $this->html->link($t('new debit card'), ['action' => 'add', 'library' => 'billing_debit'], ['class' => 'button add']) ?>
+	</div>
+
+		<?php if ($data->count()): ?>
 		<table>
 			<thead>
 				<tr>
-					<td data-sort="status" class="status list-sort"><?= $t('Status') ?>
-					<td data-sort="order" class="order list-sort"><?= $t('Order') ?>
+					<td data-sort="iban" class="iban list-sort"><?= $t('IBAN') ?>
+					<td data-sort="bic" class="bic list-sort"><?= $t('BIC') ?>
+					<td data-sort="bank" class="bank list-sort"><?= $t('Bank') ?>
+					<td data-sort="holder" class="holder list-sort"><?= $t('Holder') ?>
 					<td data-sort="user" class="user list-sort"><?= $t('User') ?>
-					<td data-sort="total-amount" class="total-amount list-sort"><?= $t('Total amount (net) ') ?>
-					<td data-sort="total-quantity" class="total-quantity list-sort"><?= $t('Total quantity') ?>
 					<td data-sort="created" class="date created list-sort desc"><?= $t('Created') ?>
 					<td class="actions">
 						<?= $this->form->field('search', [
@@ -29,20 +34,12 @@ $this->set([
 			</thead>
 			<tbody class="list">
 				<?php foreach ($data as $item): ?>
-					<?php $order = $item->order() ?>
-					<?php $user = $order ? $order->user() : null?>
-					<?php $taxZone = $user ? $user->taxZone() : null ?>
+					<?php $user = $item->user() ?>
 				<tr data-id="<?= $item->id ?>">
-					<td class="status"><?= $statuses[$item->status] ?>
-					<td class="order">
-					<?php if ($order): ?>
-						<?= $this->html->link($order->number, [
-							'controller' => 'Orders', 'action' => 'edit', 'id' => $order->id,
-							'library' => 'billing_debit'
-						]) ?>
-					<?php else: ?>
-						-
-					<?php endif ?>
+					<td class="iban"><?= $item->iban ?>
+					<td class="bic"><?= $item->bic ?>
+					<td class="bank"><?= $item->bank()->name ?>
+					<td class="holder"><?= $item->holder ?>
 					<td class="user">
 					<?php if ($user): ?>
 						<?= $this->html->link($user->number, [
@@ -53,21 +50,13 @@ $this->set([
 					<?php else: ?>
 						–
 					<?php endif ?>
-					<td class="total-amount">
-					<?php if ($user): ?>
-						<?= $this->money->format($item->totalAmount($user, $user->taxZone())->getNet(), 'money') ?: '–' ?>
-					<?php else: ?>
-						–
-					<?php endif ?>
-					<td class="total-quantity"><?= $item->totalQuantity() ?>
 					<td class="date created">
 						<time datetime="<?= $this->date->format($item->created, 'w3c') ?>">
 							<?= $this->date->format($item->created, 'date') ?>
 						</time>
 					<td class="actions">
-						<?php if (!$order && $item->status !== 'cancelled'): ?>
-							<?= $this->html->link($t('cancel'), ['id' => $item->id, 'action' => 'cancel', 'library' => 'billing_debit'], ['class' => 'button']) ?>
-						<?php endif ?>
+						<?= $this->html->link($t('delete'), ['id' => $item->id, 'action' => 'delete', 'library' => 'billing_debit'], ['class' => 'button delete']) ?>
+						<?= $this->html->link($t('open'), ['id' => $item->id, 'action' => 'edit', 'library' => 'billing_debit'], ['class' => 'button']) ?>
 				<?php endforeach ?>
 			</tbody>
 		</table>

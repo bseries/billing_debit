@@ -15,9 +15,12 @@ namespace billing_debit\controllers;
 use lithium\g11n\Message;
 use li3_flash_message\extensions\storage\FlashMessage;
 use billing_debit\models\DebitCards;
+use cms_core\models\VirtualUsers;
+use cms_core\models\Users;
 
 class DebitCardsController extends \cms_core\controllers\BaseController {
 
+	use \cms_core\controllers\AdminAddTrait;
 	use \cms_core\controllers\AdminEditTrait;
 	use \cms_core\controllers\AdminDeleteTrait;
 
@@ -25,7 +28,16 @@ class DebitCardsController extends \cms_core\controllers\BaseController {
 		$data = DebitCards::find('all', [
 			'order' => ['created' => 'desc']
 		]);
-		return compact('data') + $this->_selects();
+		return compact('data') + $this->_selects(null);
+	}
+
+	public function _selects($item) {
+		extract(Message::aliases());
+
+		$virtualUsers = [null => '-'] + VirtualUsers::find('list', ['order' => 'name']);
+		$users = [null => '-'] + Users::find('list', ['order' => 'name']);
+
+		return compact('users', 'virtualUsers');
 	}
 }
 

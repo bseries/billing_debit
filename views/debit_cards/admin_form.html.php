@@ -1,45 +1,76 @@
 <?php
 
-$untitled = $t('Untitled');
-
-$title = [
-	'action' => ucfirst($this->_request->action === 'add' ? $t('creating') : $t('editing')),
-	'title' => $item->number ?: $untitled,
-	'object' => [ucfirst($t('order')), ucfirst($t('orders'))]
-];
-$this->title("{$title['title']} - {$title['object'][1]}");
+$this->set([
+	'page' => [
+		'type' => 'single',
+		'title' => $item->iban,
+		'empty' => $t('n/a'),
+		'object' => $t('debit card')
+	]
+]);
 
 ?>
 <article class="view-<?= $this->_config['controller'] . '-' . $this->_config['template'] ?> section-spacing">
-	<h1 class="alpha">
-		<span class="action"><?= $title['action'] ?></span>
-		<span class="title" data-untitled="<?= $untitled ?>"><?= $title['title'] ?></span>
-	</h1>
 
 	<?=$this->form->create($item) ?>
-		<?= $this->form->field('number', [
-			'type' => 'text',
-			'label' => $t('Number'),
-			'disabled' => true,
-			'class' => 'use-for-title'
-		]) ?>
-		<div class="help"><?= $t('The order number is automatically generated.') ?></div>
+		<div class="grid-row">
+			<div class="grid-column-left">
+				<div class="compound-users">
+					<?php
+						$user = $item->exists() ? $item->user() : false;
+					?>
+					<?= $this->form->field('user_id', [
+						'type' => 'select',
+						'label' => $t('User'),
+						'list' => $users,
+						'class' => !$user || !$user->isVirtual() ? null : 'hide'
+					]) ?>
+					<?= $this->form->field('virtual_user_id', [
+						'type' => 'select',
+						'label' => false,
+						'list' => $virtualUsers,
+						'class' => $user && $user->isVirtual() ? null : 'hide'
+					]) ?>
+					<?= $this->form->field('user.is_real', [
+						'type' => 'checkbox',
+						'label' => $t('real user'),
+						'checked' => $user ? !$user->isVirtual() : true
+					]) ?>
+				</div>
+			</div>
+			<div class="grid-column-right">
+			</div>
+		</div>
+		<div class="grid-row grid-row-last">
+			<div class="grid-column-left">
+				<?= $this->form->field('holder', [
+					'type' => 'text',
+					'label' => $t('Holder')
+				]) ?>
+				<?= $this->form->field('iban', [
+					'type' => 'text',
+					'label' => $t('IBAN'),
+					'class' => 'use-for-title'
+				]) ?>
+				<?= $this->form->field('bic', [
+					'type' => 'text',
+					'label' => $t('BIC')
+				]) ?>
+				<?= $this->form->field('bank.name', [
+					'type' => 'text',
+					'label' => $t('Bank'),
+					'disabled' => true,
+					'value' => $item->exists() ? $item->bank()->name : null
+				]) ?>
+			</div>
+			<div class="grid-column-right">
+			</div>
+		</div>
 
-		<?= $this->form->field('billing_invoice_id', [
-			'type' => 'select',
-			'label' => $t('Invoice number'),
-			'disabled' => $item->exists(),
-			'list' => $invoices
-		]) ?>
 
-		<?= $this->form->field('ecommerce_shipment_id', [
-			'type' => 'select',
-			'label' => $t('Shipment'),
-			'disabled' => $item->exists(),
-			'list' => $shipments
-		]) ?>
-
-		<?= $this->form->button($t('save'), ['type' => 'submit', 'class' => 'button large']) ?>
+		<div class="bottom-actions">
+			<?= $this->form->button($t('save'), ['type' => 'submit', 'class' => 'button large']) ?>
+		</div>
 
 	<?=$this->form->end() ?>
 </article>

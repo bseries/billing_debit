@@ -13,11 +13,10 @@
 namespace billing_debit\models;
 
 use IBAN\Core\IBAN;
-use League\Csv\Reader;
+use billing_debit\models\Banks;
+use cms_core\models\Users;
+use cms_core\models\VirtualUsers;
 
-// BIC Download
-// http://www.bundesbank.de/Navigation/DE/Aufgaben/Unbarer_Zahlungsverkehr/SEPA/SCL_Directory/scl_directory.html
-// http://www.bundesbank.de/Redaktion/DE/Downloads/Aufgaben/Unbarer_Zahlungsverkehr/SEPA/verzeichnis_der_erreichbaren_zahlungsdienstleister.csv?__blob=publicationFile
 class DebitCards extends \cms_core\models\Base {
 
 	protected $_meta = [
@@ -29,6 +28,18 @@ class DebitCards extends \cms_core\models\Base {
 	}
 
 	public function bank($entity) {
+		return Banks::find('first', [
+			'conditions' => [
+				'bic' => $entity->bic
+			]
+		]);
+	}
+
+	public function user($entity) {
+		if ($entity->user_id) {
+			return Users::find('first', ['conditions' => ['id' => $entity->user_id]]);
+		}
+		return VirtualUsers::find('first', ['conditions' => ['id' => $entity->virtual_user_id]]);
 	}
 }
 
