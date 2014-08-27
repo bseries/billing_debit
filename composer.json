@@ -16,7 +16,8 @@
         "atelierdisko/billing_core": "1.2.*",
         "unionofrad/lithium": "dev-dev",
         "composer/installers": "~1.0",
-        "league/csv": "5.*"
+        "league/csv": "5.*",
+        "davidpersson/temporary": "1.*"
     },
     "repositories": [
       {

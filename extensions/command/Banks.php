@@ -22,46 +22,9 @@ class Banks extends \lithium\console\Command {
 	}
 
 	public function update() {
-		$this->out('Download CSV...');
-
-		$file = fopen('php://temp', 'w');
-		$url = 'http://www.bundesbank.de/Redaktion/DE/Downloads/Aufgaben/Unbarer_Zahlungsverkehr/SEPA/verzeichnis_der_erreichbaren_zahlungsdienstleister.csv?__blob=publicationFile';
-
-		$curl = curl_init($url);
-		curl_setopt($curl, CURLOPT_FILE, $file);
-		curl_exec($curl);
-		curl_close($curl);
-
-		rewind($file);
-
-		$reader = new Reader($file);
-		$reader->setDelimiter(';');
-
-		// Skip 2-line-header, indexing is 0-based.
-		$reader->setOffset(1);
-
-		BanksModel::pdo()->beginTransaction();
-
-		$this->out('Dropping table contents...');
-		BanksModel::remove();
-
-		$this->out('Download CSV...');
-		$reader->each(function($row) {
-			$item = BanksModel::create([
-				'bic' => $row[0],
-				'name' => $row[1]
-			]);
-			if (!$item->save()) {
-				BanksModel::pdo()->rollback();
-				$this->err('Failed to insert row; aborting.');
-				return false;
-			}
-
-			return true;
-		});
-
-		BanksModel::pdo()->commit();
-		fclose($file);
+		$this->out('Updating banks from source...');
+		BanksModel::updateFromSource();
+		$this->out('Done.');
 	}
 }
 
