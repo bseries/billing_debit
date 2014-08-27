@@ -15,7 +15,8 @@
         "atelierdisko/cms_core": "1.2.*",
         "atelierdisko/billing_core": "1.2.*",
         "unionofrad/lithium": "dev-dev",
-        "composer/installers": "~1.0"
+        "composer/installers": "~1.0",
+        "league/csv": "5.*"
     },
     "repositories": [
       {
