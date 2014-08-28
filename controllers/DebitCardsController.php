@@ -31,7 +31,7 @@ class DebitCardsController extends \cms_core\controllers\BaseController {
 		return compact('data') + $this->_selects(null);
 	}
 
-	public function _selects($item) {
+	public function _selects($item = null) {
 		extract(Message::aliases());
 
 		$virtualUsers = [null => '-'] + VirtualUsers::find('list', ['order' => 'name']);
