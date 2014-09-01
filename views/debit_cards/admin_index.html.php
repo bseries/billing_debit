@@ -51,7 +51,7 @@ $this->set([
 					<td class="iban emphasize"><?= $item->iban ?>
 					<td class="bic"><?= $item->bic ?>
 					<td class="bank"><?= $item->bank()->name ?>
-					<td class="direct-debit flag"><?= $item->has_accepted_direct_debit ? '✓ ' : '×' ?>
+					<td class="direct-debit flag"><?= $item->user_has_accepted_direct_debit ? '✓ ' : '×' ?>
 					<td class="date created">
 						<time datetime="<?= $this->date->format($item->created, 'w3c') ?>">
 							<?= $this->date->format($item->created, 'date') ?>

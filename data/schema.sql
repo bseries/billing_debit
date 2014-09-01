@@ -15,6 +15,7 @@ CREATE TABLE `billing_debit_cards` (
   `holder` varchar(250) NOT NULL,
   `iban` varchar(50) NOT NULL DEFAULT '' COMMENT 'length varies on countries 16-30 incl. buffer',
   `bic` varchar(20) NOT NULL DEFAULT '' COMMENT 'length varies 8-11 incl. buffer',
+  `user_has_accepted_direct_debit` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`),

@@ -41,8 +41,8 @@ $this->set([
 			<div class="grid-column-right">
 				<?= $this->form->field('has_accepted_direct_debit', [
 					'type' => 'checkbox',
-					'label' => $t('has accepted direct debit'),
-					'checked' => (boolean) $item->has_accepted_direct_debit,
+					'label' => $t('user has accepted direct debit'),
+					'checked' => (boolean) $item->user_has_accepted_direct_debit,
 					'value' => 1
 				]) ?>
 			</div>
