@@ -23,6 +23,7 @@ $this->set([
 					<td data-sort="iban" class="iban list-sort"><?= $t('IBAN') ?>
 					<td data-sort="bic" class="bic list-sort"><?= $t('BIC') ?>
 					<td data-sort="bank" class="bank list-sort"><?= $t('Bank') ?>
+					<td data-sort="direct-debit" class="direct-debit flag list-sort"><?= $t('Direct Debit?') ?>
 					<td data-sort="created" class="date created list-sort desc"><?= $t('Created') ?>
 					<td class="actions">
 						<?= $this->form->field('search', [
@@ -50,6 +51,7 @@ $this->set([
 					<td class="iban emphasize"><?= $item->iban ?>
 					<td class="bic"><?= $item->bic ?>
 					<td class="bank"><?= $item->bank()->name ?>
+					<td class="direct-debit flag"><?= $item->has_accepted_direct_debit ? '✓ ' : '×' ?>
 					<td class="date created">
 						<time datetime="<?= $this->date->format($item->created, 'w3c') ?>">
 							<?= $this->date->format($item->created, 'date') ?>
