@@ -18,16 +18,16 @@ use billing_debit\models\Banks;
 use lithium\g11n\Message;
 use lithium\util\Validator;
 
-class DebitCards extends \cms_core\models\Base {
+class DebitCards extends \base_core\models\Base {
 
-	use \cms_core\models\UserTrait;
+	use \base_core\models\UserTrait;
 
 	protected $_meta = [
 		'source' => 'billing_debit_cards'
 	];
 
 	protected static $_actsAs = [
-		'cms_core\extensions\data\behavior\Timestamp'
+		'base_core\extensions\data\behavior\Timestamp'
 	];
 
 	public static function init() {

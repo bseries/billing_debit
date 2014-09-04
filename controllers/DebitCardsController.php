@@ -15,14 +15,14 @@ namespace billing_debit\controllers;
 use lithium\g11n\Message;
 use li3_flash_message\extensions\storage\FlashMessage;
 use billing_debit\models\DebitCards;
-use cms_core\models\VirtualUsers;
-use cms_core\models\Users;
+use base_core\models\VirtualUsers;
+use base_core\models\Users;
 
-class DebitCardsController extends \cms_core\controllers\BaseController {
+class DebitCardsController extends \base_core\controllers\BaseController {
 
-	use \cms_core\controllers\AdminAddTrait;
-	use \cms_core\controllers\AdminEditTrait;
-	use \cms_core\controllers\AdminDeleteTrait;
+	use \base_core\controllers\AdminAddTrait;
+	use \base_core\controllers\AdminEditTrait;
+	use \base_core\controllers\AdminDeleteTrait;
 
 	public function admin_index() {
 		$data = DebitCards::find('all', [

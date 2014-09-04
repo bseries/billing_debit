@@ -17,7 +17,7 @@ use SplTempFileObject;
 use temporary\Manager as Temporary;
 use lithium\analysis\Logger;
 
-class Banks extends \cms_core\models\Base {
+class Banks extends \base_core\models\Base {
 
 	protected $_meta = [
 		'source' => 'billing_banks'

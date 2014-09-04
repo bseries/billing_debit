@@ -10,6 +10,6 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  */
 
-use cms_core\extensions\cms\Widgets;
+use base_core\extensions\cms\Widgets;
 
 ?>
