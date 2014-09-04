@@ -15,12 +15,12 @@ namespace billing_debit\models;
 use IBAN\Core\IBAN;
 use IBAN\Validation\IBANValidator;
 use billing_debit\models\Banks;
-use cms_core\models\Users;
-use cms_core\models\VirtualUsers;
 use lithium\g11n\Message;
 use lithium\util\Validator;
 
 class DebitCards extends \cms_core\models\Base {
+
+	use \cms_core\models\UserTrait;
 
 	protected $_meta = [
 		'source' => 'billing_debit_cards'
@@ -87,13 +87,6 @@ class DebitCards extends \cms_core\models\Base {
 				'bic' => $entity->bic
 			]
 		]);
-	}
-
-	public function user($entity) {
-		if ($entity->user_id) {
-			return Users::find('first', ['conditions' => ['id' => $entity->user_id]]);
-		}
-		return VirtualUsers::find('first', ['conditions' => ['id' => $entity->virtual_user_id]]);
 	}
 }
 
