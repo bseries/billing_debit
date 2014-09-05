@@ -14,16 +14,16 @@ use lithium\net\http\Router;
 
 $persist = ['persist' => ['admin', 'controller']];
 
-Router::connect('/admin/ecommerce/debit-cards/{:id:[0-9]+}', [
+Router::connect('/admin/billing/debit-cards/{:id:[0-9]+}', [
 	'controller' => 'DebitCards', 'library' => 'billing_debit', 'action' => 'view', 'admin' => true
 ], $persist);
-Router::connect('/admin/ecommerce/debit-cards/{:action}', [
+Router::connect('/admin/billing/debit-cards/{:action}', [
 	'controller' => 'DebitCards', 'library' => 'billing_debit', 'admin' => true
 ], $persist);
-Router::connect('/admin/ecommerce/debit-cards/{:action}/{:id:[0-9]+}', [
+Router::connect('/admin/billing/debit-cards/{:action}/{:id:[0-9]+}', [
 	'controller' => 'DebitCards', 'library' => 'billing_debit', 'admin' => true
 ], $persist);
-Router::connect('/admin/ecommerce/debit-cards/{:id:[0-9]+}/status/{:status}', [
+Router::connect('/admin/billing/debit-cards/{:id:[0-9]+}/status/{:status}', [
 	'controller' => 'DebitCards', 'action' => 'update_status', 'library' => 'billing_debit', 'admin' => true
 ], $persist);
 
