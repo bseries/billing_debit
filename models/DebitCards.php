@@ -93,14 +93,23 @@ class DebitCards extends \base_core\models\Base {
 DebitCards::init();
 
 DebitCards::applyFilter('save', function($self, $params, $chain) {
+	$entity = $params['entity'];
 	$data =& $params['data'];
 
+	$normalize = function($value) {
+		return strtoupper(preg_replace('/\s+/', '', $value));
+	};
+
 	if (isset($data['iban'])) {
-		$data['iban'] = strtoupper(preg_replace('/\s+/', '', $data['iban']));
+		$data['iban'] = $normalize($data['iban']);
 	}
+	$entity->iban = $normalize($entity->iban);
+
 	if (isset($data['bic'])) {
-		$data['bic'] = strtoupper(preg_replace('/\s+/', '', $data['bic']));
+		$data['bic'] = $normalize($data['bic']);
 	}
+	$entity->bic = $normalize($entity->bic);
+
 	return $chain->next($self, $params, $chain);
 });
 
