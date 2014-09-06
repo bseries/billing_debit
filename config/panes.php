@@ -17,7 +17,8 @@ extract(Message::aliases());
 
 Panes::register('billing.debitCards', [
 	'title' => $t('Debit Cards'),
-	'url' => ['controller' => 'DebitCards', 'action' => 'index', 'library' => 'billing_debit', 'admin' => true]
+	'url' => ['controller' => 'DebitCards', 'action' => 'index', 'library' => 'billing_debit', 'admin' => true],
+	'weight' => 70
 ]);
 
 ?>
