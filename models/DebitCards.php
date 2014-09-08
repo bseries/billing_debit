@@ -88,6 +88,34 @@ class DebitCards extends \base_core\models\Base {
 			]
 		]);
 	}
+
+	public function format($entity, $type, $locale = null, $mask = false) {
+		$mask = function($value, $before, $after) {
+			return substr($value, 0, $before) . str_repeat('X', strlen($value) - $before - $after) . substr($value, -$after);
+		};
+		if (!$locale) {
+			$locale = ($user = $entity->user()) ? $user->locale : Environment::get('locale');
+		}
+
+		if ($type == 'oneline') {
+			$result = [];
+
+			$result[] = $entity->holder;
+			$result[] = $mask ? $mask($entity->iban, 4, 4) : $entity->iban;
+			$result[] = $mask ? $mask($entity->bic, 2, 2) : $entity->bic;
+			// Security: Do not reveal bic through bank name.
+
+			return implode('/ ', $result);
+		}
+		$result = [];
+
+		$result[] = $entity->holder;
+		$result[] = 'IBAN ' . ($mask ? $mask($entity->iban, 4, 4) : $entity->iban);
+		$result[] = 'BIC ' . ($mask ? $mask($entity->bic, 2, 2) : $entity->bic);
+		// Security: Do not reveal bic through bank name.
+
+		return implode("\n", $result);
+	}
 }
 
 DebitCards::init();
