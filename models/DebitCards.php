@@ -54,7 +54,7 @@ class DebitCards extends \base_core\models\Base {
 		];
 		Validator::add('ibanFormat', function($value, $format, $options) {
 			$validator = new IBANValidator();
-			return $validator->validate($value);
+			return $validator->validate(strtoupper($value));
 		});
 
 		$model->validates['bic'] = [
@@ -71,7 +71,7 @@ class DebitCards extends \base_core\models\Base {
 		Validator::add('bicFormat', function($value, $format, $options) {
 			return (boolean) Banks::find('count', [
 				'conditions' => [
-					'bic' => $value
+					'bic' => strtoupper($value)
 				]
 			]);
 		});
