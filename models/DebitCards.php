@@ -54,7 +54,7 @@ class DebitCards extends \base_core\models\Base {
 		];
 		Validator::add('ibanFormat', function($value, $format, $options) {
 			$validator = new IBANValidator();
-			return $validator->validate(strtoupper($value));
+			return $validator->validate(static::_normalize($value));
 		});
 
 		$model->validates['bic'] = [
@@ -71,7 +71,7 @@ class DebitCards extends \base_core\models\Base {
 		Validator::add('bicFormat', function($value, $format, $options) {
 			return (boolean) Banks::find('count', [
 				'conditions' => [
-					'bic' => strtoupper($value)
+					'bic' => static::_normalize($value)
 				]
 			]);
 		});
@@ -80,19 +80,15 @@ class DebitCards extends \base_core\models\Base {
 			$entity = $params['entity'];
 			$data =& $params['data'];
 
-			$normalize = function($value) {
-				return strtoupper(preg_replace('/\s+/', '', $value));
-			};
-
 			if (isset($data['iban'])) {
-				$data['iban'] = $normalize($data['iban']);
+				$data['iban'] = static::_normalize($data['iban']);
 			}
-			$entity->iban = $normalize($entity->iban);
+			$entity->iban = static::_normalize($entity->iban);
 
 			if (isset($data['bic'])) {
-				$data['bic'] = $normalize($data['bic']);
+				$data['bic'] = static::_normalize($data['bic']);
 			}
-			$entity->bic = $normalize($entity->bic);
+			$entity->bic = static::_normalize($entity->bic);
 			return $chain->next($self, $params, $chain);
 		});
 	}
@@ -107,6 +103,10 @@ class DebitCards extends \base_core\models\Base {
 				'bic' => $entity->bic
 			]
 		]);
+	}
+
+	protected static function _normalize($value) {
+		return strtoupper(preg_replace('/\s+/', '', $value));
 	}
 
 	public function format($entity, $type, $locale = null, $mask = false) {
