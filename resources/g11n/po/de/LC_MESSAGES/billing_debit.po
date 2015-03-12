@@ -1,0 +1,107 @@
+# German translations for billing_debit package.
+# Copyright (C) 2015 Atelier Disko
+# This file is distributed under the same license as the billing_debit package.
+# Automatically generated, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: billing_debit 1.0\n"
+"Report-Msgid-Bugs-To: info@atelierdisko.de\n"
+"POT-Creation-Date: 2015-03-12 17:46+0100\n"
+"PO-Revision-Date: 2015-03-12 17:46+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: config/panes.php:19
+msgid "Debit Cards"
+msgstr ""
+
+#: models/DebitCards.php:40 models/DebitCards.php:47 models/DebitCards.php:63
+msgid "This field cannot be empty."
+msgstr ""
+
+#: models/DebitCards.php:52
+msgid "The IBAN is not correctly formatted."
+msgstr ""
+
+#: models/DebitCards.php:68
+msgid "The BIC is not correctly formatted."
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:7
+msgid "n/a"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:8
+msgid "debit card"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:24
+#: views/debit_cards/admin_index.html.php:35
+msgid "User"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:36
+msgid "real user"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:44
+msgid "user has accepted direct debit"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:54
+#: views/debit_cards/admin_index.html.php:36
+msgid "Holder"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:58
+#: views/debit_cards/admin_index.html.php:37
+msgid "IBAN"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:64
+#: views/debit_cards/admin_index.html.php:38
+msgid "BIC"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:69
+#: views/debit_cards/admin_index.html.php:39
+msgid "Bank"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:80
+msgid "save"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:12
+msgid "debit cards"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:28
+msgid "new debit card"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:40
+msgid "Direct Debit?"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:41
+msgid "Modified"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:68
+msgid "delete"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:69
+msgid "open"
+msgstr ""
+
+#: views/debit_cards/admin_index.html.php:74
+msgid "No items available, yet."
+msgstr ""
