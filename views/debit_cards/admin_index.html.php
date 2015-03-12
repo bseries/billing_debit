@@ -32,7 +32,7 @@ $this->set([
 		<table>
 			<thead>
 				<tr>
-					<td data-sort="user" class="user table-sort"><?= $t('User') ?>
+					<td data-sort="user.number" class="user table-sort"><?= $t('User') ?>
 					<td data-sort="holder" class="holder table-sort"><?= $t('Holder') ?>
 					<td data-sort="iban" class="iban table-sort"><?= $t('IBAN') ?>
 					<td data-sort="bic" class="bic table-sort"><?= $t('BIC') ?>
