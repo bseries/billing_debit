@@ -55,19 +55,19 @@ class DebitCards extends \base_core\models\Base {
 		$model->validates['holder'] = [
 			[
 				'notEmpty',
-				'message' => $t('This field cannot be empty.')
+				'message' => $t('This field cannot be empty.', ['scope' => 'billing_debit'])
 			]
 		];
 
 		$model->validates['iban'] = [
 			[
 				'notEmpty',
-				'message' => $t('This field cannot be empty.'),
+				'message' => $t('This field cannot be empty.', ['scope' => 'billing_debit']),
 				'last' => true
 			],
 			[
 				'ibanFormat',
-				'message' => $t('The IBAN is not correctly formatted.')
+				'message' => $t('The IBAN is not correctly formatted.', ['scope' => 'billing_debit'])
 			]
 		];
 		Validator::add('ibanFormat', function($value, $format, $options) {
@@ -78,12 +78,12 @@ class DebitCards extends \base_core\models\Base {
 		$model->validates['bic'] = [
 			[
 				'notEmpty',
-				'message' => $t('This field cannot be empty.'),
+				'message' => $t('This field cannot be empty.', ['scope' => 'billing_debit']),
 				'last' => true
 			],
 			[
 				'bicFormat',
-				'message' => $t('The BIC is not correctly formatted.')
+				'message' => $t('The BIC is not correctly formatted.', ['scope' => 'billing_debit'])
 			]
 		];
 		Validator::add('bicFormat', function($value, $format, $options) {
