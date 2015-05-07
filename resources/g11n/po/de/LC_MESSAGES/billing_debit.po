@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: billing_debit 1.0\n"
 "Report-Msgid-Bugs-To: info@atelierdisko.de\n"
-"POT-Creation-Date: 2015-05-07 15:28+0200\n"
-"PO-Revision-Date: 2015-05-07 15:31+0100\n"
+"POT-Creation-Date: 2015-05-07 15:47+0200\n"
+"PO-Revision-Date: 2015-05-07 15:48+0100\n"
 "Last-Translator: David Persson <davidpersson@gmx.de>\n"
 "Language-Team: none\n"
 "Language: de\n"
@@ -30,7 +30,13 @@ msgstr "Diese Feld darf nicht leer sein."
 msgid "The IBAN is not correctly formatted."
 msgstr "Die IBAN Nummer hat nicht das korrekt Format."
 
-#: models/DebitCards.php:86
+#: models/DebitCards.php:87
+msgid ""
+"Only 11-digit BICs are supported (i.e. PBNKDEFFXXX instead of PBNKDEFF)."
+msgstr ""
+"Bitte eine 11-stellige BICs eingeben (z.B. PBNKDEFFXXX anstatt PBNKDEFF)."
+
+#: models/DebitCards.php:92
 msgid "The BIC is not correctly formatted."
 msgstr "Die BIC hat nicht das korrekte Format."
 
