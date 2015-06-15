@@ -20,8 +20,6 @@ use lithium\util\Validator;
 
 class DebitCards extends \base_core\models\Base {
 
-	use \base_core\models\UserTrait;
-
 	protected $_meta = [
 		'source' => 'billing_debit_cards'
 	];
@@ -38,6 +36,7 @@ class DebitCards extends \base_core\models\Base {
 	];
 
 	protected static $_actsAs = [
+		'base_core\extensions\data\behavior\Ownable',
 		'base_core\extensions\data\behavior\Timestamp',
 		'base_core\extensions\data\behavior\Searchable' => [
 			'fields' => [
