@@ -26,7 +26,7 @@ $this->set([
 >
 
 	<div class="top-actions">
-		<?= $this->html->link($t('new debit card'), ['action' => 'add', 'library' => 'billing_debit'], ['class' => 'button add']) ?>
+		<?= $this->html->link($t('debit card'), ['action' => 'add', 'library' => 'billing_debit'], ['class' => 'button add']) ?>
 	</div>
 
 	<?php if ($data->count()): ?>
