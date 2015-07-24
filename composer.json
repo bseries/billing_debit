@@ -1,6 +1,6 @@
 {
     "name": "atelierdisko/billing_debit",
-    "description": "Debit functionality for Billing.",
+    "description": "Debit functionality for Banque.",
     "homepage": "http://atelierdisko.de",
     "type": "lithium-library",
     "license": "proprietary",

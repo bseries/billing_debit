@@ -1,5 +1,5 @@
 Billing Debit
--- Debit Payments functionality for Billing.
+-- Debit Payments functionality for Banque.
 
 Synopsis
 --------
