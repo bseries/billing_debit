@@ -12,8 +12,6 @@
 
 namespace billing_debit\controllers;
 
-use lithium\g11n\Message;
-use base_core\models\VirtualUsers;
 use base_core\models\Users;
 
 class DebitCardsController extends \base_core\controllers\BaseController {
@@ -24,12 +22,9 @@ class DebitCardsController extends \base_core\controllers\BaseController {
 	use \base_core\controllers\AdminDeleteTrait;
 
 	public function _selects($item = null) {
-		extract(Message::aliases());
-
-		$virtualUsers = [null => '-'] + VirtualUsers::find('list', ['order' => 'name']);
 		$users = [null => '-'] + Users::find('list', ['order' => 'name']);
 
-		return compact('users', 'virtualUsers');
+		return compact('users');
 	}
 }
 
