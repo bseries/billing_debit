@@ -3,7 +3,7 @@ Billing Debit
 
 Synopsis
 --------
-n/a
+Provides debit card payment storage and allows registering "local.debit" method.
 
 Authors
 -------
