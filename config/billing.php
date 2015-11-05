@@ -22,7 +22,7 @@ use lithium\g11n\Message;
 
 extract(Message::aliases());
 
-PaymentMethods::register('local.debit', [
+PaymentMethods::register('banque.localDebit', [
 	'title' => function() use ($t) {
 		return $t('Direct Debit', ['scope' => 'billing_debit']);
 	},
