@@ -53,7 +53,7 @@ $this->set([
 				<?php foreach ($data as $item): ?>
 				<tr data-id="<?= $item->id ?>">
 					<td class="user">
-						<?= $this->user->linl($item->user()) ?>
+						<?= $this->user->link($item->user()) ?>
 					<td class="holder emphasize"><?= $item->holder ?>
 					<td class="iban emphasize"><?= $item->iban ?>
 					<td class="bic"><?= $item->bic ?>
