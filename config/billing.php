@@ -17,7 +17,7 @@
 
 namespace billing_debit\config;
 
-use billing_core\models\PaymentMethods;
+use billing_payment\models\PaymentMethods;
 use lithium\g11n\Message;
 
 extract(Message::aliases());

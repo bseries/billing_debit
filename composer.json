@@ -11,17 +11,19 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
-        "jschaedl/iban": "1.1.*",
         "atelierdisko/base_core": "1.4.*",
         "atelierdisko/billing_core": "1.4.*",
-        "unionofrad/lithium": "1.0.*@dev",
+        "atelierdisko/billing_payment": "1.4.*",
         "composer/installers": "1.*@stable",
+        "davidpersson/temporary": "1.*",
+        "jschaedl/iban": "1.1.*",
         "league/csv": "5.*",
-        "davidpersson/temporary": "1.*"
+        "php": ">=5.5.0",
+        "unionofrad/lithium": "1.0.*@dev"
     },
     "repositories": [
       { "type": "vcs", "url": "git@code.atelierdisko.de:base_core.git" },
-      { "type": "vcs", "url": "git@code.atelierdisko.de:billing_core.git" }
+      { "type": "vcs", "url": "git@code.atelierdisko.de:billing_core.git" },
+      { "type": "vcs", "url": "git@code.atelierdisko.de:billing_payment.git" }
    ]
 }
