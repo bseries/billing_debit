@@ -17,12 +17,13 @@
 
 namespace billing_debit\config;
 
-use billing_payment\models\PaymentMethods;
+use billing_payment\billing\payment\Method;
 use lithium\g11n\Message;
 
 extract(Message::aliases());
 
-PaymentMethods::register('banque.localDebit', [
+Method::config('banqueDebitCardDirectDebit', [
+	'gateway' => 'BanqueDebitCardDirectDebit',
 	'title' => function() use ($t) {
 		return $t('Direct Debit', ['scope' => 'billing_debit']);
 	},
