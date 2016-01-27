@@ -15,12 +15,12 @@
  * License. If not, see http://atelierdisko.de/licenses.
  */
 
-namespace billing_debit\models;
+namespace billing_debit\billing\payment\storage;
 
 use billing_debit\models\DebitCards as Model;
 
 // $key is IBAN
-class BanqueDebitCard extends \billing_payment\payment\Storage {
+class BanqueDebitCard extends \billing_payment\billing\payment\Storage {
 
 	public function write($key, $data) {
 		$entity = Model::create();

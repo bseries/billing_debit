@@ -15,11 +15,11 @@
  * License. If not, see http://atelierdisko.de/licenses.
  */
 
-namespace billing_debit\models;
+namespace billing_debit\billing\payment\gateway;
 
-use billing_debit\payment\storage\BanqueDebitCard as Storage;
+use billing_debit\billing\payment\storage\BanqueDebitCard as Storage;
 
-class BanqueDebitCard extends \billing_payment\payment\Gateway {
+class BanqueDebitCard extends \billing_payment\billing\payment\Gateway {
 
 	public function storage() {
 		return new Storage();
