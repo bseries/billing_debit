@@ -17,9 +17,9 @@
 
 namespace billing_debit\billing\payment\gateway;
 
-use billing_debit\billing\payment\storage\BanqueDebitCard as Storage;
+use billing_debit\billing\payment\storage\DebitCard as Storage;
 
-class BanqueDebitCard extends \billing_payment\billing\payment\Gateway {
+class DebitCard extends \billing_payment\billing\payment\Gateway {
 
 	public function storage() {
 		return new Storage();
