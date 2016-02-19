@@ -20,7 +20,7 @@ namespace billing_debit\billing\payment\storage;
 use billing_debit\models\DebitCards as Model;
 
 // $key is IBAN
-class BanqueDebitCard extends \billing_payment\billing\payment\Storage {
+class DebitCard extends \billing_payment\billing\payment\Storage {
 
 	public function write($key, $data) {
 		$entity = Model::create();
