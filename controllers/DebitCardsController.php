@@ -27,9 +27,11 @@ class DebitCardsController extends \base_core\controllers\BaseController {
 	use \base_core\controllers\AdminDeleteTrait;
 
 	public function _selects($item = null) {
-		$users = [null => '-'] + Users::find('list', ['order' => 'name']);
-
-		return compact('users');
+		if ($item) {
+			$users = $this->_users($item, ['field' => 'user_id', 'empty' => true]);
+			return compact('users');
+		}
+		return [];
 	}
 }
 
