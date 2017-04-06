@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "atelierdisko/base_core": "1.5.*",
-        "atelierdisko/billing_core": "1.5.*",
-        "atelierdisko/billing_payment": "1.5.*",
+        "atelierdisko/base_core": "1.5.*@dev",
+        "atelierdisko/billing_core": "1.5.*@dev",
+        "atelierdisko/billing_payment": "1.5.*@dev",
         "composer/installers": "1.*@stable",
         "davidpersson/temporary": "1.*",
         "jschaedl/iban": "1.1.*",
