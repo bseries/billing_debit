@@ -19,7 +19,7 @@
         "jschaedl/iban": "1.1.*",
         "league/csv": "5.*",
         "php": ">=5.5.0",
-        "unionofrad/lithium": "1.1.*@dev"
+        "unionofrad/lithium": "^1.1"
     },
     "repositories": [
       { "type": "vcs", "url": "git@code.atelierdisko.de:base_core.git" },
