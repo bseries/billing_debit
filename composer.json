@@ -18,7 +18,7 @@
         "davidpersson/temporary": "1.*",
         "jschaedl/iban": "1.1.*",
         "league/csv": "5.*",
-        "php": ">=5.5.0",
+        "php": "^5.5 || ^7.0",
         "unionofrad/lithium": "^1.1"
     },
     "repositories": [
