@@ -22,8 +22,8 @@
         "unionofrad/lithium": "1.0.*@dev"
     },
     "repositories": [
-      { "type": "vcs", "url": "git@code.atelierdisko.de:base_core.git" },
-      { "type": "vcs", "url": "git@code.atelierdisko.de:billing_core.git" },
-      { "type": "vcs", "url": "git@code.atelierdisko.de:billing_payment.git" }
+      { "type": "vcs", "url": "git@code.disko.io:base_core.git" },
+      { "type": "vcs", "url": "git@code.disko.io:billing_core.git" },
+      { "type": "vcs", "url": "git@code.disko.io:billing_payment.git" }
    ]
 }
