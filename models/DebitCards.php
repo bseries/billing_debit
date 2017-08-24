@@ -82,12 +82,6 @@ class DebitCards extends \base_core\models\Base {
 				'last' => true
 			],
 			[
-				'lengthBetween',
-				'min' => 11, 'max' => 11,
-				'message' => $t('Only 11-digit BICs are supported (i.e. PBNKDEFFXXX instead of PBNKDEFF).', ['scope' => 'billing_debit']),
-				'last' => true
-			],
-			[
 				'bicFormat',
 				'message' => $t('The BIC is not correctly formatted.', ['scope' => 'billing_debit'])
 			]
