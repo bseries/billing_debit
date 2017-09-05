@@ -62,8 +62,8 @@ class Banks extends \base_core\models\Base {
 				return true;
 			}
 			$item = static::create([
-				'bic' => $row[0],
-				'name' => $row[1]
+				'bic' => trim($row[0]),
+				'name' => trim($row[1])
 			]);
 			if (!$item->save()) {
 				static::pdo()->rollback();
