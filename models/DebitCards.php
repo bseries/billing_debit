@@ -66,11 +66,11 @@ class DebitCards extends \base_core\models\Base {
 				'last' => true
 			],
 			[
-				'ibanFormat',
+				'DebitCards.ibanFormat',
 				'message' => $t('The IBAN is not correctly formatted.', ['scope' => 'billing_debit'])
 			]
 		];
-		Validator::add('ibanFormat', function($value, $format, $options) {
+		Validator::add('DebitCards.ibanFormat', function($value, $format, $options) {
 			$validator = new IBANValidator();
 			return $validator->validate(static::_normalize($value));
 		});
@@ -82,11 +82,11 @@ class DebitCards extends \base_core\models\Base {
 				'last' => true
 			],
 			[
-				'bicFormat',
+				'DebitCards.bicFormat',
 				'message' => $t('The BIC is not correctly formatted.', ['scope' => 'billing_debit'])
 			]
 		];
-		Validator::add('bicFormat', function($value, $format, $options) {
+		Validator::add('DebitCards.bicFormat', function($value, $format, $options) {
 			return (boolean) Banks::find('count', [
 				'conditions' => [
 					'bic' => static::_normalize($value)
