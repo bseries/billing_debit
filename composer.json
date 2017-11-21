@@ -1,19 +1,12 @@
 {
-    "name": "atelierdisko/billing_debit",
+    "name": "bseries/billing_debit",
     "description": "Debit functionality for Banque.",
-    "homepage": "https://atelierdisko.de",
     "type": "lithium-library",
     "license": "proprietary",
-    "authors": [
-        {
-          "name": "Atelier Disko",
-          "homepage": "https://atelierdisko.de"
-        }
-    ],
     "require": {
-        "atelierdisko/base_core": "1.5.*@dev",
-        "atelierdisko/billing_core": "1.5.*@dev",
-        "atelierdisko/billing_payment": "1.5.*@dev",
+        "bseries/base_core": "1.5.*@dev",
+        "bseries/billing_core": "1.5.*@dev",
+        "bseries/billing_payment": "1.5.*@dev",
         "composer/installers": "1.*@stable",
         "davidpersson/temporary": "1.*",
         "jschaedl/iban": "1.1.*",
@@ -22,7 +15,6 @@
         "unionofrad/lithium": "^1.1"
     },
     "repositories": [
-      { "type": "vcs", "url": "git@code.disko.io:base_core.git" },
       { "type": "vcs", "url": "git@code.disko.io:billing_core.git" },
       { "type": "vcs", "url": "git@code.disko.io:billing_payment.git" }
    ]
