@@ -1,5 +1,5 @@
 {
-    "name": "atelierdisko/billing_debit",
+    "name": "bseries/billing_debit",
     "description": "Debit functionality for Banque.",
     "homepage": "http://atelierdisko.de",
     "type": "lithium-library",
@@ -11,9 +11,9 @@
         }
     ],
     "require": {
-        "atelierdisko/base_core": "1.4.*",
-        "atelierdisko/billing_core": "1.4.*",
-        "atelierdisko/billing_payment": "1.4.*",
+        "bseries/base_core": "1.4.*",
+        "bseries/billing_core": "1.4.*",
+        "bseries/billing_payment": "1.4.*",
         "composer/installers": "1.*@stable",
         "davidpersson/temporary": "1.*",
         "jschaedl/iban": "1.1.*",
