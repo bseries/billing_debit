@@ -5,7 +5,7 @@ CREATE TABLE `billing_banks` (
   `name` varchar(250) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `bic` (`bic`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;
 
 -- Create syntax for TABLE 'billing_debit_cards'
 CREATE TABLE `billing_debit_cards` (
@@ -19,4 +19,4 @@ CREATE TABLE `billing_debit_cards` (
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB;

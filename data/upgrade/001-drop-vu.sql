@@ -1,3 +1,0 @@
--- After migration command.
--- ALTER TABLE `billing_debit_cards` DROP `virtual_user_id`;
--- ALTER TABLE `billing_debit_cards` CHANGE `user_id` `user_id` INT(11)  UNSIGNED  NOT NULL;
