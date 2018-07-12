@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR Atelier Disko
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the billing_debit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: billing_debit 1.0\n"
 "Report-Msgid-Bugs-To: info@atelierdisko.de\n"
-"POT-Creation-Date: 2015-05-07 15:47+0200\n"
+"POT-Creation-Date: 2018-07-12 12:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: config/panes.php:19
+#: config/panes.php:26
 msgid "Debit Cards"
 msgstr ""
 
@@ -29,12 +29,7 @@ msgstr ""
 msgid "The IBAN is not correctly formatted."
 msgstr ""
 
-#: models/DebitCards.php:87
-msgid ""
-"Only 11-digit BICs are supported (i.e. PBNKDEFFXXX instead of PBNKDEFF)."
-msgstr ""
-
-#: models/DebitCards.php:92
+#: models/DebitCards.php:86
 msgid "The BIC is not correctly formatted."
 msgstr ""
 
@@ -43,52 +38,49 @@ msgid "n/a"
 msgstr ""
 
 #: views/debit_cards/admin_form.html.php:14
+#: views/debit_cards/admin_index.html.php:29
 msgid "debit card"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:30
+#: views/debit_cards/admin_form.html.php:26
 #: views/debit_cards/admin_index.html.php:36
 msgid "User"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:42
-msgid "real user"
-msgstr ""
-
-#: views/debit_cards/admin_form.html.php:50
+#: views/debit_cards/admin_form.html.php:33
 msgid "user has accepted direct debit"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:60
+#: views/debit_cards/admin_form.html.php:43
 #: views/debit_cards/admin_index.html.php:37
 msgid "Holder"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:64
+#: views/debit_cards/admin_form.html.php:47
 #: views/debit_cards/admin_index.html.php:38
 msgid "IBAN"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:70
+#: views/debit_cards/admin_form.html.php:53
 #: views/debit_cards/admin_index.html.php:39
 msgid "BIC"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:75
+#: views/debit_cards/admin_form.html.php:58
 #: views/debit_cards/admin_index.html.php:40
 msgid "Bank"
 msgstr ""
 
-#: views/debit_cards/admin_form.html.php:86
+#: views/debit_cards/admin_form.html.php:70
+msgid "delete"
+msgstr ""
+
+#: views/debit_cards/admin_form.html.php:76
 msgid "save"
 msgstr ""
 
 #: views/debit_cards/admin_index.html.php:12
 msgid "debit cards"
-msgstr ""
-
-#: views/debit_cards/admin_index.html.php:29
-msgid "new debit card"
 msgstr ""
 
 #: views/debit_cards/admin_index.html.php:41
@@ -103,14 +95,10 @@ msgstr ""
 msgid "Filter"
 msgstr ""
 
-#: views/debit_cards/admin_index.html.php:76
-msgid "delete"
-msgstr ""
-
-#: views/debit_cards/admin_index.html.php:77
+#: views/debit_cards/admin_index.html.php:67
 msgid "open"
 msgstr ""
 
-#: views/debit_cards/admin_index.html.php:82
+#: views/debit_cards/admin_index.html.php:72
 msgid "No items available, yet."
 msgstr ""

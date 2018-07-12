@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: billing_debit 1.0\n"
 "Report-Msgid-Bugs-To: info@atelierdisko.de\n"
-"POT-Creation-Date: 2015-05-07 15:47+0200\n"
+"POT-Creation-Date: 2018-07-12 12:51+0200\n"
 "PO-Revision-Date: 2015-05-07 15:48+0100\n"
 "Last-Translator: David Persson <davidpersson@gmx.de>\n"
 "Language-Team: none\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: config/panes.php:19
+#: config/panes.php:26
 msgid "Debit Cards"
 msgstr "Debitkarten"
 
@@ -30,13 +30,7 @@ msgstr "Diese Feld darf nicht leer sein."
 msgid "The IBAN is not correctly formatted."
 msgstr "Die IBAN Nummer hat nicht das korrekt Format."
 
-#: models/DebitCards.php:87
-msgid ""
-"Only 11-digit BICs are supported (i.e. PBNKDEFFXXX instead of PBNKDEFF)."
-msgstr ""
-"Bitte eine 11-stellige BICs eingeben (z.B. PBNKDEFFXXX anstatt PBNKDEFF)."
-
-#: models/DebitCards.php:92
+#: models/DebitCards.php:86
 msgid "The BIC is not correctly formatted."
 msgstr "Die BIC hat nicht das korrekte Format."
 
@@ -45,53 +39,50 @@ msgid "n/a"
 msgstr "n. v."
 
 #: views/debit_cards/admin_form.html.php:14
+#: views/debit_cards/admin_index.html.php:29
 msgid "debit card"
 msgstr "Debitkarte"
 
-#: views/debit_cards/admin_form.html.php:30
+#: views/debit_cards/admin_form.html.php:26
 #: views/debit_cards/admin_index.html.php:36
 msgid "User"
 msgstr "Benuzter"
 
-#: views/debit_cards/admin_form.html.php:42
-msgid "real user"
-msgstr ""
-
-#: views/debit_cards/admin_form.html.php:50
+#: views/debit_cards/admin_form.html.php:33
 msgid "user has accepted direct debit"
 msgstr "Nutzer hat Lastschrift akzeptiert"
 
-#: views/debit_cards/admin_form.html.php:60
+#: views/debit_cards/admin_form.html.php:43
 #: views/debit_cards/admin_index.html.php:37
 msgid "Holder"
 msgstr "Inhaber"
 
-#: views/debit_cards/admin_form.html.php:64
+#: views/debit_cards/admin_form.html.php:47
 #: views/debit_cards/admin_index.html.php:38
 msgid "IBAN"
 msgstr "IBAN"
 
-#: views/debit_cards/admin_form.html.php:70
+#: views/debit_cards/admin_form.html.php:53
 #: views/debit_cards/admin_index.html.php:39
 msgid "BIC"
 msgstr "BIC"
 
-#: views/debit_cards/admin_form.html.php:75
+#: views/debit_cards/admin_form.html.php:58
 #: views/debit_cards/admin_index.html.php:40
 msgid "Bank"
 msgstr "Bank"
 
-#: views/debit_cards/admin_form.html.php:86
+#: views/debit_cards/admin_form.html.php:70
+msgid "delete"
+msgstr "löschen"
+
+#: views/debit_cards/admin_form.html.php:76
 msgid "save"
 msgstr "speichern"
 
 #: views/debit_cards/admin_index.html.php:12
 msgid "debit cards"
 msgstr "Debitkarten"
-
-#: views/debit_cards/admin_index.html.php:29
-msgid "new debit card"
-msgstr "neue Debitkarte"
 
 #: views/debit_cards/admin_index.html.php:41
 msgid "Direct Debit?"
@@ -105,14 +96,18 @@ msgstr "Bearbeitet"
 msgid "Filter"
 msgstr "Filter"
 
-#: views/debit_cards/admin_index.html.php:76
-msgid "delete"
-msgstr "löschen"
-
-#: views/debit_cards/admin_index.html.php:77
+#: views/debit_cards/admin_index.html.php:67
 msgid "open"
 msgstr "öffnen"
 
-#: views/debit_cards/admin_index.html.php:82
+#: views/debit_cards/admin_index.html.php:72
 msgid "No items available, yet."
 msgstr "Noch keine Daten verfügbar."
+
+#~ msgid ""
+#~ "Only 11-digit BICs are supported (i.e. PBNKDEFFXXX instead of PBNKDEFF)."
+#~ msgstr ""
+#~ "Bitte eine 11-stellige BICs eingeben (z.B. PBNKDEFFXXX anstatt PBNKDEFF)."
+
+#~ msgid "new debit card"
+#~ msgstr "neue Debitkarte"
